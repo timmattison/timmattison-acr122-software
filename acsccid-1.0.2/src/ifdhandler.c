@@ -1413,9 +1413,9 @@ EXTERNAL RESPONSECODE IFDHControl(DWORD Lun, DWORD dwControlCode,
 
 		if (KOBIL_TRIBANK == ccid_descriptor -> readerID)
 		{
-			pcsc_tlv -> tag = FEATURE_MCT_READERDIRECT;
+			pcsc_tlv -> tag = FEATURE_MCT_READER_DIRECT;
 			pcsc_tlv -> length = 0x04; /* always 0x04 */
-			pcsc_tlv -> value = htonl(IOCTL_FEATURE_MCT_READERDIRECT);
+			pcsc_tlv -> value = htonl(IOCTL_FEATURE_MCT_READER_DIRECT);
 
 			pcsc_tlv++;
 			iBytesReturned += sizeof(PCSC_TLV_STRUCTURE);
@@ -1469,7 +1469,7 @@ EXTERNAL RESPONSECODE IFDHControl(DWORD Lun, DWORD dwControlCode,
 	}
 
 	/* MCT: Multifunctional Card Terminal */
-	if (IOCTL_FEATURE_MCT_READERDIRECT == dwControlCode)
+	if (IOCTL_FEATURE_MCT_READER_DIRECT == dwControlCode)
 	{
 		if ( (TxBuffer[0] != 0x20)	/* CLA */
 			|| ((TxBuffer[1] & 0xF0) != 0x70)	/* INS */
