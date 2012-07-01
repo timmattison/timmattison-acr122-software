@@ -1,5 +1,9 @@
-Verify libusb installation:
-libusb-config --version
-
-If it isn't installed:
-sudo apt-get install libusb-dev
+sudo apt-get install libpcsclite-dev rpl flex
+wget http://www.acs.com.hk/drivers/eng/ACR122_Driver_Lnx_Mac10.5_10.6_10.7_102_P.zip
+Unzip
+tar xjvf acsccid-1.0.2.tar.bz2
+cd acsccid-1.0.2
+rpl -R FEATURE_MCT_READERDIRECT FEATURE_MCT_READER_DIRECT *
+./configure
+make
+sudo make install
