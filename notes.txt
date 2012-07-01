@@ -1,0 +1,5 @@
+Verify libusb installation:
+libusb-config --version
+
+If it isn't installed:
+sudo apt-get install libusb-dev
